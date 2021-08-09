@@ -10,8 +10,8 @@
 - Here, we have parsed data from all completed 3v3 matches on the [Hero PvP System](https://hero.pics/PvP) (currently 40 of them) and generated feature tuples `x1, x2` which represent the match progress and team lead as well as a target vector `y` which encodes a `0` for match loss and `1` for match won. 
 - We train on a logistic regression classifier (sklearn) which assigns an associated class probability with each prediction. We report this probability as each team's win chance. 
 - The form of the logistic regression is:
-<img width="696" alt="Screen Shot 2021-08-08 at 10 00 18 PM" src="https://user-images.githubusercontent.com/88293729/128662036-7967b5ed-4039-483b-9a05-1381eeaed961.png">
-- Our learned parameter values are `b1 = -1.10460269`, `b2 = 0.43577768`, `b3 = 0.02632877'.
+<img width="666" alt="Screen Shot 2021-08-08 at 10 24 14 PM" src="https://user-images.githubusercontent.com/88293729/128663453-361ab00f-e1fe-40e9-aab0-4205bed78726.png">
+- Our learned parameter values are `b1 = -1.10460269`, `b2 = 0.43577768`, `b3 = 0.02632877`.
 - To report our predictions:
 ```python
 def predict(TeamAScore, TeamBScore):
