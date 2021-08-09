@@ -1,3 +1,4 @@
+
 ## Match Result Prediction Using Logistic Regression Binary Classifier
 - We can predict the outcome of a match at each time point in the match by inputting the current score of team A and team B.
 - This is done using a machine learning model trained on 3v3 games.
@@ -7,6 +8,9 @@
 - Here, we have parsed data from all completed 3v3 matches on the [Hero PvP System](https://hero.pics/PvP) (currently 40 of them) and generated feature tuples `x1, x2` which represent the match progress and team lead as well as a target vector `y` which encodes a `0` for match loss and `1` for match won. 
 - We train on a logistic regression classifier (sklearn) which assigns an associated class probability with each prediction. We report this probability as each team's win chance. 
 
+## Decision Region Plot
+![clf](https://user-images.githubusercontent.com/88293729/128660322-6e5af181-d71f-4db6-8603-c1004874f312.png)
+For the most part, the data appears to be linearly seperable with [some outlier games](https://hero.pics/PvP/7618766), and hence a simple linear regression model appears to work decently. The model's prediction improve towards the end of the match compared to the start.
 
 ### Next Steps
 - Train a LTSM model on match time to incorporate time series data into model; account for shifts in momentum / "snowball effect" from controlling the middle of the map.
