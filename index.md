@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+## Match Result Prediction Using Logistic Regression Binary Classifier
+- We can predict the outcome of a match at each time point in the match by inputting the current score of team A and team B.
+- This is done using a machine learning model trained on 3v3 games.
+- The model accuracy on training data is 
 
-You can use the [editor on GitHub](https://github.com/AQWHeroStats/PvPML/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Details
+- Here, we have parsed data from all completed 3v3 matches on the [Hero PvP System](https://hero.pics/PvP) (currently 40 of them) and generated feature tuples `x1, x2` which represent the match progress and team lead as well as a target vector `y` which encodes a `0` for match loss and `1` for match won. 
+- We train on a logistic regression classifier (sklearn) which assigns an associated class probability with each prediction. We report this probability as each team's win chance. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AQWHeroStats/PvPML/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Next Steps
+- Train a LTSM model on match time to incorporate time series data into model; account for shifts in momentum / "snowball effect" from controlling the middle of the map.
+- Train CNN on 20 parameter list (including damage dealt, healing done) along with time series data to see if deeper predictions can be made.
+- Perform principle component analysis (PCA) on winning teams to determine which factors most lead to thier victory. 
