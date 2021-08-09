@@ -1,4 +1,5 @@
 title: ML Based Game Outcome Predictor
+logo: HeroLogo.png
 description: Logistic classifier based 3v3 outcome prediction
 theme: jekyll-theme-minimal
 
